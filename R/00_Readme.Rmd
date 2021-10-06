@@ -1,0 +1,24 @@
+---
+title: "Readme"
+author: "Joel Alejandro Zavala Prieto"
+output: pdf_document
+---
+
+En esta carpeta se subiran programas desarrollados en lenguaje R, por comodidad y facilidad, se subirán en archivos .pdf. 
+
+Se veran aplicaciones principalmente en:
+
+1. Análisis de datos
+2. Ciencia de datos
+3. Optimización
+4. Simulación
+
+Espero disfruten del contenido.
+
+Cualquier duda, sugerencia o agradecimiento pueden contactarme por mis redes:
+
+- Mail: alejandro.zavala1001@gmail.com
+
+- Facebook: https://www.facebook.com/AlejandroZavala1001
+
+- Git: https://github.com/AlejandroZavala98
