@@ -6,7 +6,7 @@ output: pdf_document
 
 En esta carpeta se subiran programas desarrollados en lenguaje R, por comodidad y facilidad, se subirán en archivos .pdf. 
 
-Se veran aplicaciones principalmente en:
+Se verán aplicaciones principalmente en:
 
 1. Análisis de datos
 2. Ciencia de datos
