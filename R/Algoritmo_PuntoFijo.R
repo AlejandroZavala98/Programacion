@@ -1,8 +1,6 @@
 #  Algoritmo de Punto fijo By: Alejandro Zavala
 # 
-# Queremos determinar el minimo de una función, recorriendo todas las alternativas posibles
-# y evaluando la mejor, tenemos una funcion que tomara valores en un intervalo que le demos,
-# y por medio de un algoritmo veremos cual es el valor minimo entero recorrido
+# Algoritmo de punto fijo para encontrar las soluciones de las ecuaciones en una variable
 
 
 rm(list = ls())
@@ -24,23 +22,17 @@ trasnf_func <- function(x)
   return(log(x)+2)
 }
 
-metodo_punto_fijo <- function(func,p_0)
+metodo_punto_fijo <- function(func,p_0,tol)
 {
-  tolerancia_error <- 0.001
 
-  
   pn <- p_0
   f_pn <- func(pn)
   iteracion_n <- c(pn,f_pn)
   data_f<-data.frame()
   
-  # "an"=double(), #no sirve ni idea
-  #                  "bn"=numeric(),
-  #                  "pn"=numeric(),
-  #                  "f(pn)" = numeric())
   data_f <-rbind(data_f,iteracion_n)
   
-  while (abs(f_pn-pn) > tolerancia_error)
+  while (abs(f_pn-pn) > tol)
   {
     pn <- f_pn
     f_pn <- func(pn)
@@ -52,7 +44,7 @@ metodo_punto_fijo <- function(func,p_0)
 }
 
 
-result_opt <-metodo_punto_fijo(trasnf_func,2.71)
+result_opt <-metodo_punto_fijo(trasnf_func,p_0 = 2.71, tol = 0.001)
 result_opt
 
 abline(v = result_opt$`f(p_n)`[length(result_opt$`f(p_n)`)], col="darkgreen",lwd = 2)
