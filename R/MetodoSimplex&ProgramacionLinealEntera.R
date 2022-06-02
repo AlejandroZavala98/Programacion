@@ -1,16 +1,14 @@
-library(boot) # Programación lineal
-library(lpSolve) # Programación lineal entera
-
-
-# Para resolver
+# ProgramaciÃ³n lineal
 
 # max c^{T}x
 # s.a AX < b
 # x >= 0
 
+library(boot)
+
 rm(list=ls()) # Limpiamos el entorno
 
-vector_c <- c(80,45) # funcion objetivo
+vector_c <- c(80,45) # funcion objetivo (vector c)
 vector_c
 
 vector_b <- c(7,60,3) # valores del vector b
@@ -29,27 +27,8 @@ sol_simplex <- simplex(a = vector_c,
                        maxi = TRUE )
 
 sol_simplex$soln # Solucion al problema de maximizacion
-sol_simplex$value # equivalente a  sum(mySimplex$soln*vector_c)
-
-# Ahora para resolver
-
-# max c^{T}x
-# s.a AX < b
-# x >= 0 enteros
-
-
-restricciones <- c("<=","<=","<=")
-int_sol <- c(1,2)
-
-int_solution <- lp(direction = "max",
-                   objective.in = vector_c,
-                   const.mat = matrix_A,
-                   const.dir = restricciones,
-                   const.rhs = vector_b,
-                   int.vec = int_sol, all.int = TRUE)
-
-int_solution$solution # Solucion al problema con resultados enteros
-int_solution$objval # equivalente a  sum(int_solution$solution*vector_c)
+sol_simplex$value # equivalente a  sum(sol_simplex$soln * vector_c)
+sum(sol_simplex$soln * vector_c)
 
 
 
